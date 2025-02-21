@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - My Web Server</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .feature-card p {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+        }
+
+        .section-title {
+            text-align: center;
+            margin: 4rem 0 2rem;
+            color: white;
+        }
+
+        .media-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .media-container {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .media-title {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .video-wrapper, .audio-wrapper {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin: 1rem 0;
+        }
+
+        video {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        audio {
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .image-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .image-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="section-title">Features Addressed By My Web Server</h1>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>Static File Serving</h3>
+                    <p>Serves static files from the specified web root directory ("./www/"), supporting various file types including HTML, CSS, JavaScript, images, audio, and video.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>MIME Type Detection</h3>
+                    <p>Automatically detects and sets appropriate MIME types for different file extensions, ensuring proper content delivery.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>Multi-threaded Architecture</h3>
+                    <p>Utilizing a thread pool with 5 worker threads to handle multiple connections concurrently. Each client connection is handled in a separate thread for optimal performance.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>HTTP Protocol Support</h3>
+                    <p>Implements basic HTTP/1.1 protocol with comprehensive GET request handling and appropriate HTTP headers including status codes, content types, and content lengths.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>Error Handling</h3>
+                    <p>Provides custom error pages for common HTTP errors (400, 404, 405) with fallback to default error messages when custom pages are unavailable.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>Logging and Debugging</h3>
+                    <p>Comprehensive logging system that prints received HTTP requests for efficient debugging and monitoring.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>Connection Management</h3>
+                    <p>Efficient connection handling with automatic closure after each request using the Connection: close header.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>Default Page Handling</h3>
+                    <p>Automatically serves "index.html" when the root path ("/") is requested, providing seamless default page functionality.</p>
+                </div>
+            </div>
+
+    <div class="media-section">
+        <div class="media-container">
+            <h3 class="media-title">Image Gallery</h3>
+            <div class="image-grid">
+                <div class="image-card">
+                    <img src="image.jpg" alt="Feature Showcase 1">
+                </div>
+                <div class="image-card">
+                    <img src="image2.jpg" alt="Feature Showcase 2">
+                </div>
+                <div class="image-card">
+                    <img src="image3.jpg" alt="Feature Showcase 3">
+                </div>
+            </div>
+        </div>
+
+        <div class="media-container">
+            <h3 class="media-title">Video Demonstration</h3>
+            <div class="video-wrapper">
+                <video controls>
+                    <source src="video.mp4" type="video/mp4">
+                    <source src="video.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+
+        <div class="media-container">
+            <h3 class="media-title">Audio Sample</h3>
+            <div class="audio-wrapper">
+                <audio controls>
+                    <source src="audio.mp3" type="audio/mpeg">
+                    <source src="audio.ogg" type="audio/ogg">
+                    Your browser does not support the audio tag.
+                </audio>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
